@@ -1,0 +1,19 @@
+{
+  "name": "in_viewport",
+  "version": "1.0.0",
+  "description": "Check if an element is in the window viewport and do things depending on it if is/isn't.",
+  "main": "viewport.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scottdonaldson/in_viewport.git"
+  },
+  "author": "Scott Donaldson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/scottdonaldson/in_viewport/issues"
+  },
+  "homepage": "https://github.com/scottdonaldson/in_viewport#readme"
+}
