@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+  <head>
+  <title>inViewport</title>
+  <script src="viewport.js"></script>
+  <style>html, body { margin: 0; padding: 0; }
+  div {
+    background: #bbb;
+    height: 700px;
+    margin: 30px auto;
+    width: 700px;
+  }
+  .yup {
+  	background: #ec7;
+  }
+  p {
+  	text-align: center;
+  	font: 20px sans-serif;
+  	margin: 60px auto;
+  	width: 700px;
+  }
+  </style>
+  </head>
+  <body>
+  <p>SCROLL to see more.</p>
+  <p>This element will appear orange when at least 50% in viewport, gray when not.</p>
+    <div id="example1"></div>
+    <p>An alert will appear when this element is at least 90% in viewport (and will fire again whenever it reappears 90% in viewport). It will also turn orange, but will not turn back to gray.</p>
+    <div id="example2"></div>
+    <p>When this element is at least 50% in viewport, then 2 seconds later, if it is still in viewport, an alert will appear. The alert will only ever appear once.</p>
+    <div id="example3"></div>
+    
+    <script>
+      var first = document.getElementById('example1'),
+      	second = document.getElementById('example2'),
+      	third = document.getElementById('example3');
+
+      	function check() {
+	      	
+      		// conditional check
+	      	if ( inViewport(first) ) {
+	      		first.classList.add('yup');
+	      	} else {
+	      		first.classList.remove('yup');
+	      	}
+
+	      	inViewport({
+	      		element: second,
+	      		threshold: 0.9,
+	      		repeat: true
+	      	}, function() {
+	      		alert('Element is at least 90% in viewport');
+	      	});
+
+	      	inViewport({
+	      		element: second,
+	      		threshold: 0.9
+	      	}, function() {
+	      		second.classList.add('yup');
+	      	});
+
+	      	inViewport({
+	      		element: third,
+	      		timeout: 2000,
+	      		once: true
+	      	}, function() {
+	      		alert('After two seconds, element was still in viewport.');
+	      	});
+
+      	}
+      window.addEventListener('scroll', check);
+    </script>
+  </body>
+</html>
