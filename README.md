@@ -10,7 +10,7 @@ var el = document.getElementById('foo');
 inViewport(el); // returns true or false
 ```
 
-By default, `inViewport` returns `true` if at least 50% (vertically) of the element is in the viewport. This can be adjusted by passing in a configuration object instead of an `HTMLelement`.
+By default, `inViewport` returns `true` if at least 50% (vertically) of the element is in the viewport. This can be adjusted by passing in a configuration object instead of an `HTMLElement`.
 
 ```
 inViewport({
